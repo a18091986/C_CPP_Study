@@ -1,0 +1,4 @@
+~/C/lesson_8$ gcc -Wall -Werror -Wextra -c lesson_8_3.1.c -o lesson_8_3.1.o
+~/C/lesson_8$ gcc *.o -o test
+~/C/lesson_8$ gcc -Wall -Werror -Wextra -c lesson_8_3.c -o lesson_8_3.o
+~/C/lesson_8$ ./test 
