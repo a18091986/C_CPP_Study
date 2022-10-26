@@ -1,0 +1,110 @@
+1) Математика.
+Есть формула (расчёта резисторного делителя) Uo = Ui * (R1 / (R2 + R1)).
+Напишите формулы расчёта каждой переменной по отдельности, в формате:
+Ui = ...;
+R1 = ...;
+R2 = ...;
+
+2) Условия.
+Запросить у пользователя любое целое число. Написать программу которая проверит, входит ли введённое число в диапазон (например, от 0 до 100, включительно) и выведет на экран сообщение о результате проверки.
+
+3) Циклы.
+Запросить у пользователя десять чисел. Вывести на экран среднее арифметическое введённых чисел.
+
+4) Звёздочка.
+Запросить у пользователя количество используемых для вывода строк. Написать программу, которая при помощи циклов и символа ^ будет рисовать на указанном количестве строк равнобедренный треугольник.
+
+После того как вы сделаете домашнее задание, ознакомьтесь, пожалуйста, с видеозаписью "Решение домашнего задания урок 5" в разделе "Материалы" справа.
+
+1. Математика.
+Ui = Uo * ((R1 + R2) / R1)
+R1 = Uo * R2 / (Ui - Uo)
+R2 = R1 * (Ui - Uo) / Uo
+
+2. Условия.
+
+#include <stdio.h>
+#include <locale.h>
+
+int main(int argc, const char* argv[]) {
+    char* locale = setlocale(LC_ALL, "");
+
+    printf("Привет! Данная программа проверяет входит ли введенное вами число в заданный вами же диапазон. \n");
+
+    int lowerBound;
+    printf("Введите значение нижней границы диапазона: ");
+    scanf_s("%d", &lowerBound);
+
+    int upperBound;
+    printf("Введите значение верхней границы диапазона: ");
+    scanf_s("%d", &upperBound);
+
+    int number;
+    printf("Введите любое целое число: ");
+    scanf_s("%d", &number);
+
+    int hits = number >= lowerBound && number <= upperBound;
+    printf("Число %d %sпопадает в диапазон [%d..%d]", number, hits ? "" : "не ", lowerBound, upperBound);
+}
+3. Циклы.
+
+#include <stdio.h>
+#include <locale.h>
+
+int main(int argc, const char* argv[]) {
+    char* locale = setlocale(LC_ALL, "");
+
+    printf("Привет! Данная программа запрашивает у вас 10 чисел и считает их среднее арифметическое. \n");
+
+    int sum = 0;
+
+    int i;
+    int number;
+    for (i = 1; i <= 10; i++) {
+        printf("Введите число под номером %d: ", i);
+        scanf_s("%d", &number);
+        sum += number;
+    }
+
+    printf("Среднее арифметическое введенных чисел равно %d", sum / 10);
+}
+4. Звёздочка.
+
+#include <stdio.h>
+#include <locale.h>
+
+int main(int argc, const char* argv[]) {
+char* locale = setlocale(LC_ALL, "");
+
+    printf("Привет! Данная программа запрашивает у вас количество строк, на которых надо нарисовать равнобедренный треугольник и рисует его! \n");
+
+    int rowCount;
+    printf("Введите количество строк: ");
+    scanf_s("%d", &rowCount);
+
+    int columnCount = rowCount * 2 - 1;
+
+    int symbolCount;
+    int spacesCount;
+
+    int i;
+    int j;
+    for (i = 1; i <= rowCount; i++) {
+        symbolCount = (i * 2 - 1);
+        spacesCount = (columnCount - symbolCount) / 2;
+
+        for (j = 0; j < spacesCount; j++) {
+            printf(" ");
+        }
+
+        for (j = 0; j < symbolCount; j++) {
+            printf("^");
+        }
+
+        for (j = 0; j < spacesCount; j++) {
+            printf(" ");
+        }
+
+        printf("\n");
+    }
+}
