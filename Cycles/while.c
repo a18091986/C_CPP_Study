@@ -14,6 +14,12 @@
 int main() {
     // цикл с предусловием
 
+    int k = 10;
+    while(k) {
+        printf("i: %d\n", k);
+        k--;
+    }
+
     int a = 10, b = 20, even = 0, count_even = 0;
     while (a < b) {
         printf("%d ", a);
