@@ -22,8 +22,8 @@ int main () {
     printf("a[0]: %d\n", *p_arr);
     printf("pointer_a[0]: %p\n", p_arr);
     int * p_arr_4 = p_arr + 5;
-    printf("Between pointer_0 and pointer_4: %ld\n", p_arr_4 - p_arr);
-    printf("Between pointer_0 and pointer_4 size: %ld\n", (p_arr_4 - p_arr) * sizeof(int));
+    printf("Between pointer_0 and pointer_4: %lld\n", p_arr_4 - p_arr);
+    printf("Between pointer_0 and pointer_4 size: %lld\n", (p_arr_4 - p_arr) * sizeof(int));
 
     int p_test = *++p_arr;
     int p_test_1 = *p_arr++;
