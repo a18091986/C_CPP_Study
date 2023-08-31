@@ -2,7 +2,7 @@ C=g++
 
 all: clean compile
 
-compile: main.cpp funcs.cpp
+compile: main.cpp
 	$C *.cpp -o res
 	./res
 
